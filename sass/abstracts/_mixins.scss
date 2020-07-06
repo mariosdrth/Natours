@@ -1,0 +1,11 @@
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin boxShadow($hOffset: 0, $vOffset: 1.5rem, $blur: 4rem, $percentage: 0.15) {
+  box-shadow: $hOffset $vOffset $blur rgba($color-black, $percentage);
+}
