@@ -6,6 +6,13 @@
   }
 }
 
-@mixin boxShadow($hOffset: 0, $vOffset: 1.5rem, $blur: 4rem, $percentage: 0.15) {
-  box-shadow: $hOffset $vOffset $blur rgba($color-black, $percentage);
+@mixin boxShadow($hOffset: 0, $vOffset: 1.5, $blur: 4, $percentage: 0.15) {
+  box-shadow: ($hOffset * 1rem) ($vOffset * 1rem) ($blur * 1rem) rgba($color-black, $percentage);
+}
+
+@mixin centerHorVer($top: 50, $left: 50) {
+  position: absolute;
+  top: $top * 1%;
+  left: $left * 1%;
+  transform: translate(-50%, -50%);
 }

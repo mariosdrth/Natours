@@ -18,10 +18,7 @@
   }
 
   &__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include centerHorVer(40, 50);
     text-align: center;
   }
 }

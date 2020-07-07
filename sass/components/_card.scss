@@ -113,7 +113,7 @@
         padding: 1rem;
 
         &:not(:last-child) {
-          border-bottom: 1px solid $color-gray-dark-2;
+          border-bottom: 1px solid $color-grey-light-2;
         }
       }
     }
@@ -121,10 +121,7 @@
 
   // BACK SIDE STYLING
   &__cta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include centerHorVer;
     width: 90%;
     text-align: center;
   }
