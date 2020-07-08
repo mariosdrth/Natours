@@ -10,6 +10,11 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  @supports (backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, 0.4);
+  }
+
   &__content {
     width: 75%;
     background-color: $color-white;
@@ -26,6 +31,12 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @include respond(tab-land) {
+      width: auto;
+      display: table-row;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__right {
@@ -33,11 +44,39 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(tab-land) {
+      width: auto;
+      display: table-row;
+      text-align: center;
+    }
+
+    .btn {
+      @include respond(tab-land) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .heading-secondary {
+      @include respond(tab-land) {
+        margin-top: 1.5rem;
+      }
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(tab-land) {
+      display: inline-block;
+      height: 100%;
+      width: 50%;
+    }
+
+    &:last-child {
+      margin-top: -1rem;
+    }
   }
 
   &__text {
@@ -48,6 +87,11 @@
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2;
     hyphens: auto;
+
+    @include respond(tab-land) {
+      padding: 0 3rem;
+      text-align: justify;
+    }
   }
 
   &:target {
@@ -72,6 +116,12 @@
       display: inline-block;
       transition: all 0.2s;
       line-height: 1;
+
+      @include respond(tab-land) {
+        top: 1.5rem;
+        right: 1.5rem;
+        color: $color-grey-dark-3;
+      }
     }
 
     &:hover {
